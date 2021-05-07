@@ -1,5 +1,8 @@
 <?php
 
+
+use App\Http\Controllers\RecordController;
+use App\Http\Controllers\CollectionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,3 +21,12 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('records', RecordController::class);
+
+Route::resource('collections', CollectionController::class);
+
+Route::resources([
+    'records' => RecordController::class,
+    'collections' => CollectionController::class,
+]);
