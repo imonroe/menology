@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Http\Request;
+#use App\Http\Controllers\RecordController;
+#use App\Http\Controllers\CollectionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,10 +18,6 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-
-
-use App\Http\Controllers\RecordController;
-use App\Http\Controllers\CollectionController;
 
 Route::apiResources([
     'records' => RecordController::class,

@@ -1,8 +1,8 @@
 <?php
 
 
-use App\Http\Controllers\RecordController;
-use App\Http\Controllers\CollectionController;
+#use App\Http\Controllers\RecordController;
+#use App\Http\Controllers\CollectionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes

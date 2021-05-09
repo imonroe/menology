@@ -14,7 +14,16 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    <p>Welcome back, {{ $user->name }}
+
+                    <hr />
+                    <div>
+                        <h3>Your Collections</h3>
+                        <collection-list owner="{{ $user->id }}"></collection-list>
+                    </div>
+
+                    @include('collection.addCollection')
+
                 </div>
             </div>
         </div>
