@@ -14,7 +14,14 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    <p>Welcome back, {{ $user->name }}
+
+                    @include('collection.listCollections')
+
+                    @include('collection.addCollection')
+
+
+                    @include('auth.passport')
                 </div>
             </div>
         </div>

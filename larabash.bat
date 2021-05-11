@@ -1,1 +1,1 @@
-docker-compose exec laravel bash
+docker-compose exec diary_laravel bash
