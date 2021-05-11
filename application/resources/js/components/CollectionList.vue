@@ -9,7 +9,7 @@
                         <div>
                             <ul v-for="col in collection" :key="col.title">
                                 <li>
-                                    <span><a href="#">{{ col.title }}</a></span><br>
+                                    <span><a v-bind:href="'/collections/' + col.id">{{ col.title }}</a></span><br>
                                     <span>{{ col.description }}</span>
                                 </li>
                             </ul>

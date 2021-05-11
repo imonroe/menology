@@ -44,7 +44,7 @@ RUN groupadd -g 1000 www && useradd -u 1000 -ms /bin/bash -g www www
 
 # Copy existing application directory and supporting files.
 COPY ./application /var/www/
-COPY ./configuration/nginx/conf.d/ /etc/nginx/conf.d/
+COPY ./configuration/nginx/conf.d/app.conf /etc/nginx/conf.d/app.conf
 COPY ./configuration/php/local.ini /usr/local/etc/php/conf.d/local.ini
 
 RUN rm -rf /etc/nginx/sites-enabled && mkdir -p /etc/nginx/sites-enabled && chmod -R 777 /var/www/storage

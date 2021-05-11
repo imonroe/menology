@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">Collection: </div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,14 +14,19 @@
                         </div>
                     @endif
 
-                    <p>Welcome back, {{ $user->name }}
+                    <h2>{{ $collection->title }}</H2>
 
-                    @include('collection.listCollections')
+                    <div class="records">
+                        <h4>Records:</h4>
+                        <ul>
+                        @foreach ($collection->records as $record)
+                            @include('record.showRecord', ['record' => $record])
+                        @endforeach
+                        </ul>
+                    </div>
 
-                    @include('collection.addCollection')
+                    @include('record.addRecord')
 
-
-                    @include('auth.passport')
                 </div>
             </div>
         </div>

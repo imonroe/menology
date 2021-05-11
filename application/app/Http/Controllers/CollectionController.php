@@ -49,12 +49,13 @@ class CollectionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request, $id)
     {
         if ($request->expectsJson()) {
             return Collection::find($id);
         } else {
-            return Collection::find($id);
+            $collection =  Collection::find($id);
+            return view('collection.showCollection', ['collection' => $collection, 'user' => $request->user()]);
         }
     }
 
@@ -101,5 +102,16 @@ class CollectionController extends Controller
         $collection = Collection::findOrFail($id);
         $collection->delete();
         return 204;
+    }
+
+
+    public function getRecords(Request $request, $id)
+    {
+        $collection = Collection::findOrFail($id);
+        if ($request->expectsJson()) {
+            return $collection->records;
+        } else {
+            return $collection->records;
+        }
     }
 }
